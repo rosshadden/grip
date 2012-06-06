@@ -1,4 +1,4 @@
-ballpoint
+grip
 =========
 
-Ballpoint is a Stylus layout framework, aiming to bust a proverbial cap in the face of structured design.
+Grip is a Stylus layout framework, providing a handle on structured design.

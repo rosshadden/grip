@@ -1,6 +1,6 @@
-$column = 60px
-$gutter = 20px
-$numColumns = 12
+$column ?= 60px
+$gutter ?= 20px
+$numColumns ?= 12
 $totalWidth = $numColumns * $column + $gutter * ($column - 1)
 
 column(col)
@@ -24,7 +24,7 @@ input(col)
 .row:after
   clear both
 
-[class*="column"]
+[class*="span"]
   float left
   margin-left $gutter
 
@@ -32,25 +32,25 @@ input(col)
   width $totalWidth
 
 for col in 1..$numColumns
-  .column{col}
+  .span{col}
     column(col)
 
   .offset{col}
     offset(col)
 
-  input.column{col}
-  textarea.column{col}
+  input.span{col}
+  textarea.span{col}
     input(col)
 
 //  FORMS
-input[class*="column"]
-select[class*="column"]
-textarea[class*="column"]
+input[class*="span"]
+select[class*="span"]
+textarea[class*="span"]
   float: none
   margin-left 0
 
-.input-append input[class*="column"]
-.input-prepend input[class*="column"]
+.input-append input[class*="span"]
+.input-prepend input[class*="span"]
   display: inline-block
 
 input
