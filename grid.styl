@@ -1,0 +1,101 @@
+$column = 60px
+$gutter = 20px
+$numColumns = 12
+$totalWidth = $numColumns * $column + $gutter * ($column - 1)
+
+column(col)
+  width $column * col + $gutter * (col - 1)
+
+offset(col)
+  margin-left ($column + $gutter) * col + $gutter
+
+.row
+  margin-left -($gutter)
+  *zoom 1
+
+.row:before,
+.row:after
+  display table
+  content ""
+
+.row:after
+  clear both
+
+[class*="span"]
+  float left
+  margin-left $gutter
+
+.container
+  width $totalWidth
+
+.span12
+  column(12)
+
+.span11
+  column(11)
+
+.span10
+  column(10)
+
+.span9
+  column(9)
+
+.span8
+  column(8)
+
+.span7
+  column(7)
+
+.span6
+  column(6)
+
+.span5
+  column(5)
+
+.span4
+  column(4)
+
+.span3
+  column(3)
+
+.span2
+  column(2)
+
+.span1
+  column(1)
+
+.offset12
+  offset(12)
+
+.offset11
+  offset(11)
+
+.offset10
+  offset(10)
+
+.offset9
+  offset(9)
+
+.offset8
+  offset(8)
+
+.offset7
+  offset(7)
+
+.offset6
+  offset(6)
+
+.offset5
+  offset(5)
+
+.offset4
+  offset(4)
+
+.offset3
+  offset(3)
+
+.offset2
+  offset(2)
+
+.offset1
+  offset(1)
