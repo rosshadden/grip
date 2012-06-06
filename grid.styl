@@ -9,6 +9,9 @@ column(col)
 offset(col)
   margin-left ($column + $gutter) * col + $gutter
 
+input(col)
+  width $column * col + $gutter * (col - 1) - 10px
+
 .row
   margin-left -($gutter)
   *zoom 1
@@ -28,74 +31,28 @@ offset(col)
 .container
   width $totalWidth
 
-.column12
-  column(12)
+for col in 1..$numColumns
+  .column{col}
+    column(col)
 
-.column11
-  column(11)
+  .offset{col}
+    offset(col)
 
-.column10
-  column(10)
+  input.column{col}
+  textarea.column{col}
+    input(col)
 
-.column9
-  column(9)
+//  FORMS
+input[class*="column"]
+select[class*="column"]
+textarea[class*="column"]
+  float: none
+  margin-left 0
 
-.column8
-  column(8)
+.input-append input[class*="column"]
+.input-prepend input[class*="column"]
+  display: inline-block
 
-.column7
-  column(7)
-
-.column6
-  column(6)
-
-.column5
-  column(5)
-
-.column4
-  column(4)
-
-.column3
-  column(3)
-
-.column2
-  column(2)
-
-.column1
-  column(1)
-
-.offset12
-  offset(12)
-
-.offset11
-  offset(11)
-
-.offset10
-  offset(10)
-
-.offset9
-  offset(9)
-
-.offset8
-  offset(8)
-
-.offset7
-  offset(7)
-
-.offset6
-  offset(6)
-
-.offset5
-  offset(5)
-
-.offset4
-  offset(4)
-
-.offset3
-  offset(3)
-
-.offset2
-  offset(2)
-
-.offset1
-  offset(1)
+input
+textarea
+  margin-left 0
