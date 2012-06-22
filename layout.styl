@@ -1,5 +1,20 @@
+// Layouts
+// Fixed-width and fluid (with sidebar) layouts
+// --------------------------------------------
+
+
 // Centered container element
 container-fixed()
   margin-right auto
   margin-left auto
+  clearfix()
+
+// Container (centered, fixed-width layouts)
+.container
+  container-fixed()
+
+// Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid
+  padding-right: $gridGutterWidth
+  padding-left: $gridGutterWidth
   clearfix()
