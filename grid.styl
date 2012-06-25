@@ -1,16 +1,11 @@
-$column ?= 60px
-$gutter ?= 20px
-$numColumns ?= 12
-$totalWidth = $numColumns * $column + $gutter * ($numColumns - 1)
-
 column(col)
-  width $column * col + $gutter * (col - 1)
+  width $gridColumnWidth * col + $gridGutterWidth * (col - 1)
 
 offset(col)
-  margin-left ($column + $gutter) * col + $gutter
+  margin-left ($gridColumnWidth + $gridGutterWidth) * col + $gridGutterWidth
 
 input(col)
-  width $column * col + $gutter * (col - 1) - 10px
+  width $gridColumnWidth * col + $gridGutterWidth * (col - 1) - 10px
 
 // Table columns
 tableColumns($columnSpan = 1)
